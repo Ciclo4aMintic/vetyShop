@@ -69,7 +69,7 @@ const productosSchema=mongoose.Schema({
         type:Number,
         default:0
     },
-    Opiniones:[
+    opiniones:[
         {
             nombreCliente:{
                 type:String,
@@ -93,4 +93,4 @@ const productosSchema=mongoose.Schema({
     }
         
 })
-
+module.exports=mongoose.model["productos",productosSchema]
