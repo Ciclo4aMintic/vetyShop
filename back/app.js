@@ -8,6 +8,6 @@ app.use(express.json());
 const productos=require("./routes/products")
 
 //establecer ruta navegador
-app.use('/',productos) //sujeta a cambios
+app.use('/api',productos) //sujeta a cambios
 
 module.exports=app;

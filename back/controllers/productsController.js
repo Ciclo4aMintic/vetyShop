@@ -13,7 +13,7 @@ exports.getProducts=async (req, res, next) =>{
 
 //Ver un producto por ID
 exports.getProductsById= async (req,res,next) =>{
-    const product =await producto.findById(req.parametros.body.id)
+    const product =await producto.findById(req.param.body.id)
     if(!product){
         return res.status(404).json ({
             success:false,
@@ -30,15 +30,15 @@ exports.getProductsById= async (req,res,next) =>{
 }
 //Update de un producto
 exports.updateProduct= async(req,res,next) =>{
-    let product =await producto.findById(req.parametros.id)//Let variable de tipo modificable
+    let product =await producto.findById(req.param.id)//Let variable de tipo modificable
     if(!product){//verifica que el objeto no existe
         return res.status(404).json ({
             success:false,
             message:"No encontramos ese producto"
         })
     }//si el objeto existe verificar actualizacion
-    product=await producto.findByIdAndUpdate(req.parametros.id,req.body,{
-        new:true,
+    product=await producto.findByIdAndUpdate(req.param.id,req.body,{
+        new:true,//valido atributos nuevos
         runValidators:true
 
 
